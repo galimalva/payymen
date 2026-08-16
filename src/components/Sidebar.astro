@@ -1,0 +1,146 @@
+<aside class="sidebar glass">
+
+  <div class="logo">
+    AF
+  </div>
+
+  <nav>
+
+    <a href="#home" class="active">
+      ⌂
+    </a>
+
+    <a href="#works">
+      ✎
+    </a>
+
+    <a href="#about">
+      ◇
+    </a>
+
+    <a href="#contact">
+      ✉️
+    </a>
+
+  </nav>
+
+  <div class="bottom-icon">
+    ✦
+  </div>
+
+</aside>
+
+<style>
+
+.sidebar {
+  position: sticky;
+
+  top: 30px;
+
+  height: calc(100vh - 60px);
+
+  padding: 20px 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-radius: 30px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px;
+
+  font-weight: 800;
+
+  background: linear-gradient(
+    135deg,
+    #F0C76A,
+    #2E7BC6
+  );
+
+  color: #111;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+nav a {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 16px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 20px;
+
+  color: #aeb5b2;
+
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+
+  color: white;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    inset 3px 0 0 #F0C76A;
+}
+
+.bottom-icon {
+  color: #ccc;
+}
+
+@media (max-width: 800px) {
+
+  .sidebar {
+    position: fixed;
+
+    z-index: 100;
+
+    bottom: 18px;
+    top: auto;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 36px);
+
+    height: 72px;
+
+    flex-direction: row;
+
+    padding: 10px 18px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+  }
+
+  .bottom-icon {
+    display: none;
+  }
+
+}
+
+</style>

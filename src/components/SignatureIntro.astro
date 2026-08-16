@@ -1,0 +1,117 @@
+<div id="signature-intro">
+  <div class="signature-wrap">
+    <img
+      src="/images/signature.jpg"
+      alt="امضای نویسنده"
+      class="signature-image"
+    />
+  </div>
+</div>
+
+<style>
+  #signature-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(46, 123, 198, 0.10),
+        transparent 42%
+      ),
+      #080b0d;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+      opacity 0.8s ease,
+      visibility 0.8s ease;
+  }
+
+  #signature-intro.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .signature-wrap {
+    width: min(68vw, 430px);
+
+    opacity: 0;
+    transform: scale(0.88) translateY(12px);
+
+    animation: signatureEnter 1.4s cubic-bezier(0.22, 1, 0.36, 1)
+      forwards;
+  }
+
+  .signature-image {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    /*
+      چون عکس فعلی زمینه سفید و امضای سیاه دارد،
+      این فیلتر آن را برای پس‌زمینه تیره مناسب می‌کند.
+    */
+    filter:
+      invert(1)
+      brightness(1.35)
+      sepia(0.25);
+
+    mix-blend-mode: screen;
+  }
+
+  @keyframes signatureEnter {
+    0% {
+      opacity: 0;
+      transform: scale(0.88) translateY(12px);
+      filter: blur(10px);
+    }
+
+    55% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .signature-wrap {
+      width: min(76vw, 340px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .signature-wrap {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  window.addEventListener("load", () => {
+    const intro = document.getElementById("signature-intro");
+
+    if (!intro) return;
+
+    setTimeout(() => {
+      intro.classList.add("hide");
+    }, 2600);
+
+    setTimeout(() => {
+      intro.remove();
+    }, 3500);
+  });
+</script>

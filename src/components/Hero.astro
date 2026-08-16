@@ -1,0 +1,242 @@
+<section id="home" class="hero glass">
+
+<div class="hero-bg"></div>
+
+<div class="hero-content">
+
+<span class="eyebrow">
+وب‌سایت شخصی
+</span>
+
+<h1 class="name-title">
+  <span>عارفه</span>
+  <span class="gradient-text">پیمان</span>
+</h1>
+
+<h2>
+نویسنده، داستان‌نویس و طراح وب
+</h2>
+
+<p>
+اینجا بخشی از جهان من است؛
+جایی برای داستان‌ها، نوشته‌ها،
+تجربه‌ها و چیزهایی که ارزش
+ثبت شدن دارند.
+</p>
+
+<div class="actions">
+
+<a href="#works" class="primary">
+مشاهده آثار
+</a>
+
+<a href="#about" class="secondary">
+درباره من
+</a>
+
+</div>
+
+</div>
+
+<div class="visual">
+  <img src="/profile.jpg" alt="عکس پروفایل" class="portrait-placeholder" />
+</div>
+
+</section>
+
+<style>
+
+.hero {
+position: relative;
+
+min-height: 620px;
+
+padding: 70px;
+
+display: grid;
+
+grid-template-columns: 1.2fr 0.8fr;
+
+align-items: center;
+
+gap: 50px;
+
+overflow: hidden;
+}
+
+.hero-bg {
+position: absolute;
+
+width: 520px;
+height: 520px;
+
+left: -130px;
+top: -180px;
+
+border-radius: 50%;
+
+background:
+linear-gradient(
+135deg,
+#F0C76A,
+#6B8B5A,
+#2E7BC6
+);
+
+filter: blur(150px);
+
+opacity: 0.22;
+
+pointer-events: none;
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+}
+
+.eyebrow {
+display: inline-block;
+
+margin-bottom: 22px;
+
+color: #F0C76A;
+
+font-size: 14px;
+
+letter-spacing: 1px;
+}
+
+h1 {
+font-size: clamp(
+55px,
+8vw,
+120px
+);
+
+line-height: 0.95;
+
+margin-bottom: 25px;
+}
+
+h2 {
+color: #d6d8d6;
+
+font-size: 22px;
+
+font-weight: 500;
+
+margin-bottom: 28px;
+}
+
+p {
+max-width: 600px;
+
+color: #a8aeab;
+
+font-size: 18px;
+
+line-height: 2;
+}
+
+.actions {
+display: flex;
+
+gap: 15px;
+
+margin-top: 35px;
+}
+
+.actions a {
+padding: 14px 25px;
+
+border-radius: 15px;
+
+transition: 0.3s;
+}
+
+.primary {
+background: linear-gradient(
+90deg,
+#F0C76A,
+#2E7BC6
+);
+
+color: #101010;
+
+font-weight: bold;
+}
+
+.secondary {
+background:
+rgba(255,255,255,0.06);
+
+border:
+1px solid rgba(255,255,255,0.08);
+}
+
+.actions a:hover {
+transform: translateY(-3px);
+}
+
+.visual {
+display: flex;
+
+justify-content: center;
+}
+
+.portrait-placeholder {
+  width: 340px;
+  height: 430px;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 35px;
+
+  display: block;
+} {
+
+width: min(340px, 100%);
+aspect-ratio: 4/5;
+
+border-radius: 40px;
+
+display: grid;
+place-items: center;
+
+color: #888;
+
+border:
+1px solid rgba(255,255,255,0.1);
+
+background:
+linear-gradient(
+145deg,
+rgba(240,199,106,.15),
+rgba(46,123,198,.14),
+rgba(0,0,0,.30)
+);
+}
+
+@media(max-width: 900px) {
+
+.hero {
+grid-template-columns: 1fr;
+
+padding: 45px 28px;
+}
+
+.visual {
+order: -1;
+}
+
+}
+.name-title {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+</style>
+

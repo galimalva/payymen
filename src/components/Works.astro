@@ -1,0 +1,241 @@
+<section id="works" class="works glass">
+
+<div class="section-head">
+
+<div>
+<span>
+آثار
+</span>
+
+<h2>
+آخرین نوشته‌ها
+</h2>
+</div>
+
+<a href="#">
+مشاهده همه
+</a>
+
+</div>
+
+
+<div class="works-grid">
+
+<article class="work-card">
+
+<div class="cover cover-1"></div>
+
+<span class="category">
+داستان کوتاه
+</span>
+
+<h3>
+آن سوی پنجره
+</h3>
+
+<p>
+روایتی کوتاه از سکوت،
+انتظار و آدم‌هایی که
+دیر به خانه می‌رسند.
+</p>
+
+<a href="#">
+مطالعه داستان ←
+</a>
+
+</article>
+
+
+<article class="work-card">
+
+<div class="cover cover-2"></div>
+
+<span class="category">
+یادداشت
+</span>
+
+<h3>
+وقتی شهر خاموش می‌شود
+</h3>
+
+<p>
+یادداشتی درباره شهر،
+تاریکی و زندگی روزمره.
+</p>
+
+<a href="#">
+ادامه مطلب ←
+</a>
+
+</article>
+
+
+<article class="work-card">
+
+<div class="cover cover-3"></div>
+
+<span class="category">
+داستان
+</span>
+
+<h3>
+آخرین ایستگاه
+</h3>
+
+<p>
+داستانی درباره رفتن،
+ماندن و چیزهایی که
+هیچ‌وقت گفته نشدند.
+</p>
+
+<a href="#">
+مطالعه ←
+</a>
+
+</article>
+
+</div>
+
+</section>
+
+<style>
+
+.works {
+padding: 45px;
+}
+
+.section-head {
+display: flex;
+
+justify-content: space-between;
+
+align-items: end;
+
+margin-bottom: 35px;
+}
+
+.section-head span {
+color: #F0C76A;
+
+font-size: 14px;
+}
+
+.section-head h2 {
+font-size: 35px;
+
+margin-top: 8px;
+}
+
+.section-head a {
+color: #9ca7a2;
+}
+
+.works-grid {
+display: grid;
+
+grid-template-columns:
+repeat(3, 1fr);
+
+gap: 20px;
+}
+
+.work-card {
+padding: 18px;
+
+border-radius: 24px;
+
+background:
+rgba(255,255,255,0.035);
+
+border:
+1px solid rgba(255,255,255,0.06);
+
+transition: 0.35s;
+}
+
+.work-card:hover {
+transform:
+translateY(-8px);
+
+background:
+rgba(255,255,255,0.065);
+}
+
+.cover {
+height: 230px;
+
+border-radius: 18px;
+
+margin-bottom: 22px;
+
+background-size: cover;
+}
+
+.cover-1 {
+background:
+linear-gradient(
+135deg,
+#F0C76A,
+#7A5A2E,
+#2A2A2A
+);
+}
+
+.cover-2 {
+background:
+linear-gradient(
+135deg,
+#2F6F6D,
+#2E7BC6,
+#415A8A
+);
+}
+
+.cover-3 {
+background:
+linear-gradient(
+135deg,
+#6B8B5A,
+#B7964A,
+#2A2A2A
+);
+}
+
+.category {
+color: #F0C76A;
+
+font-size: 13px;
+}
+
+.work-card h3 {
+margin:
+12px 0;
+
+font-size: 21px;
+}
+
+.work-card p {
+font-size: 15px;
+
+line-height: 1.8;
+
+margin-bottom: 15px;
+}
+
+.work-card a {
+font-size: 14px;
+
+color: #8db8df;
+}
+
+@media(max-width: 950px) {
+
+.works-grid {
+grid-template-columns:
+1fr;
+}
+
+}
+
+</style>
+

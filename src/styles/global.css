@@ -1,0 +1,196 @@
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Estedad";
+  src: url("/fonts/Estedad-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Estedad";
+  src: url("/fonts/Estedad-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Estedad";
+  src: url("/fonts/Estedad-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --gold: #F0C76A;
+  --warm-gold: #E7B24D;
+  --earth: #B7964A;
+  --green: #6B8B5A;
+  --teal: #2F6F6D;
+  --blue: #2E7BC6;
+  --sky: #5D88B8;
+  --deep-blue: #415A8A;
+  --brown: #7A5A2E;
+  --charcoal: #2A2A2A;
+
+  --bg: #080b0d;
+  --bg-soft: #101417;
+  --text: #f4f4f2;
+  --muted: #a8aeab;
+
+  --glass: rgba(24, 29, 30, 0.48);
+  --glass-dark: rgba(12, 16, 17, 0.66);
+  --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: "Vazirmatn", Arial, sans-serif;
+  font-weight: 400;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(240, 199, 106, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(46, 123, 198, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(47, 111, 109, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(122, 90, 46, 0.15),
+      transparent 30%
+    ),
+    #080b0d;
+
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Estedad", "Vazirmatn", Arial, sans-serif;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+p,
+span,
+li,
+a,
+button,
+input,
+textarea {
+  font-family: "Vazirmatn", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+.glass {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  border-radius: 28px;
+}
+
+.brand-gradient {
+  background: linear-gradient(
+    90deg,
+    #F0C76A 0%,
+    #E7B24D 12%,
+    #B7964A 23%,
+    #6B8B5A 34%,
+    #2F6F6D 46%,
+    #2E7BC6 58%,
+    #5D88B8 68%,
+    #415A8A 78%,
+    #7A5A2E 90%,
+    #2A2A2A 100%
+  );
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #F0C76A,
+    #6B8B5A,
+    #2E7BC6,
+    #5D88B8
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

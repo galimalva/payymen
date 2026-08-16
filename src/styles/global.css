@@ -194,3 +194,203 @@ button {
   background-clip: text;
   color: transparent;
 }
+/* ========================================
+   WATER DROP HOVER EFFECT - ALL BUTTONS
+   ======================================== */
+
+button,
+[role="button"],
+.actions a,
+.sidebar a,
+a[class*="btn"],
+a[class*="button"] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+button::after,
+[role="button"]::after,
+.actions a::after,
+.sidebar a::after,
+a[class*="btn"]::after,
+a[class*="button"]::after {
+  content: "";
+  position: absolute;
+
+  width: 40px;
+  height: 40px;
+
+  left: 50%;
+  top: 50%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.42),
+      rgba(255, 255, 255, 0.14) 25%,
+      rgba(255, 255, 255, 0.04) 55%,
+      transparent 72%
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  box-shadow:
+    inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.12),
+    0 3px 12px rgba(0, 0, 0, 0.14);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.2);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.4s cubic-bezier(.2,.8,.2,1);
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+button:hover::after,
+[role="button"]:hover::after,
+.actions a:hover::after,
+.sidebar a:hover::after,
+a[class*="btn"]:hover::after,
+a[class*="button"]:hover::after {
+  opacity: 1;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+}
+/* ========================================
+   BLUE / TURQUOISE THEME
+   ======================================== */
+
+html[data-theme="light"] {
+  --bg: #10243a;
+  --bg-soft: #17324f;
+
+  --text: #f7fbff;
+  --muted: #d6e6f7;
+
+  --glass: rgba(111, 168, 230, 0.18);
+  --glass-dark: rgba(43, 181, 166, 0.16);
+
+  --border: rgba(214, 243, 239, 0.20);
+}
+
+html[data-theme="light"] body {
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(47, 107, 255, 0.32),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(76, 200, 219, 0.30),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 35% 78%,
+      rgba(43, 181, 166, 0.28),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 90% 82%,
+      rgba(127, 217, 204, 0.24),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #17324f 0%,
+      #214d73 30%,
+      #245f78 58%,
+      #1f716d 100%
+    );
+
+  background-attachment: fixed;
+}
+
+/* شیشه‌ها */
+
+html[data-theme="light"] .glass {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(166, 200, 240, 0.20),
+      rgba(127, 217, 204, 0.10)
+    );
+
+  border:
+    1px solid rgba(214, 243, 239, 0.18);
+
+  box-shadow:
+    0 25px 70px rgba(7, 25, 40, 0.30),
+    inset 0 1px 0 rgba(214, 243, 239, 0.18);
+
+  backdrop-filter: blur(28px) saturate(145%);
+  -webkit-backdrop-filter: blur(28px) saturate(145%);
+}
+
+/* متن‌های معمولی */
+
+html[data-theme="light"] p {
+  color: #d6e6f7;
+}
+
+/* رنگ‌های تأکیدی */
+
+html[data-theme="light"] .gradient-text {
+  background: linear-gradient(
+    90deg,
+    #2F6BFF,
+    #4C8DDB,
+    #6FA8E6,
+    #4CC7B7,
+    #7FD9CC
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* دکمه‌ها */
+
+html[data-theme="light"] button,
+html[data-theme="light"] .actions a {
+  border-color: rgba(214, 243, 239, 0.20);
+}
+
+/* تغییر نرم تم */
+
+body,
+.glass,
+button,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition:
+    background 0.55s ease,
+    background-color 0.55s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.55s ease;
+}

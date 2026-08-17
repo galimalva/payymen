@@ -394,3 +394,66 @@ h6 {
     border-color 0.4s ease,
     box-shadow 0.55s ease;
 }
+/* =========================
+   تم بنفش
+========================= */
+
+html[data-theme="purple"] body {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(144, 67, 213, 0.25),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(104, 33, 121, 0.28),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(69, 12, 73, 0.34),
+      transparent 42%
+    ),
+    #120815;
+
+  color: #f5f1f7;
+}
+
+
+/* شیشه‌ها در تم بنفش */
+
+html[data-theme="purple"] .glass {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(144, 67, 213, 0.10),
+      rgba(69, 12, 73, 0.16)
+    );
+
+  border-color:
+    rgba(144, 67, 213, 0.20);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 0 35px rgba(144, 67, 213, 0.08);
+}
+
+
+/* متن گرادیانی در تم بنفش */
+
+html[data-theme="purple"] .gradient-text {
+  background:
+    linear-gradient(
+      90deg,
+      #9043D5,
+      #682179,
+      #450C49
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}

@@ -1,0 +1,624 @@
+[8/17/2026 11:22 PM] عادل سادات: ---
+import Layout from "../layouts/Layout.astro";
+
+import Sidebar from "../components/Sidebar.astro";
+import Hero from "../components/Hero.astro";
+import Works from "../components/Works.astro";
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+---
+
+<Layout title="Arefa Payman">
+
+  <main class="page">
+
+    <Sidebar />
+
+    <div class="content">
+
+      <section class="hero glass">
+
+        <div class="hero-bg"></div>
+
+        <div class="hero-content">
+
+          <span class="eyebrow">
+            Personal Website
+          </span>
+
+          <h1 class="name-title">
+            <span>Arefa</span>
+            <span class="gradient-text">Payman</span>
+          </h1>
+
+          <h2>
+            Writer and Storyteller
+          </h2>
+
+          <p>
+            This is a small part of my world;
+            a place for stories, writings,
+            experiences, and things worth preserving.
+          </p>
+
+          <div class="actions">
+
+            <a href="#works" class="primary">
+              View Works
+            </a>
+
+            <a href="#about" class="secondary">
+              About Me
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="visual">
+
+          <img
+            src="/profile.jpg"
+            alt="Profile photo"
+            class="portrait-placeholder"
+          />
+
+        </div>
+
+      </section>
+
+
+      <section id="works" class="works glass">
+
+        <div class="section-head">
+
+          <div>
+            <span>Works</span>
+
+            <h2>
+              Latest Writings
+            </h2>
+          </div>
+
+        </div>
+
+        <div class="works-grid">
+
+          <article class="work-card">
+
+            <div class="cover cover-1"></div>
+
+            <span class="category">
+              Short Story
+            </span>
+
+            <h3>
+              Beyond the Window
+            </h3>
+
+            <p>
+              A short story about silence,
+              waiting, and people who arrive home too late.
+            </p>
+
+            <a href="#">
+              Read Story →
+            </a>
+
+          </article>
+
+
+          <article class="work-card">
+
+            <div class="cover cover-2"></div>
+
+            <span class="category">
+              Note
+            </span>
+
+            <h3>
+              When the City Goes Dark
+            </h3>
+
+            <p>
+              A reflection on the city,
+              darkness, and everyday life.
+            </p>
+
+            <a href="#">
+              Read More →
+            </a>
+
+          </article>
+
+
+          <article class="work-card">
+
+            <div class="cover cover-3"></div>
+
+            <span class="category">
+              Story
+            </span>
+
+            <h3>
+              The Last Station
+            </h3>
+
+            <p>
+              A story about leaving,
+              staying, and things that were never said.
+            </p>
+
+            <a href="#">
+              Read →
+            </a>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <section id="about" class="about glass">
+
+        <div class="about-visual">
+
+          <img
+            src="/about.jpg"
+            alt="About me"
+            class="about-image"
+          />
+
+        </div>
+
+        <div class="about-content">
+
+          <span>
+            About Me
+          </span>
+
+          <h2>
+            Behind the Words
+          </h2>
+
+          <p>
+            Writing is not simply about putting
+            a few sentences together.
+
+            Stories are where people,
+            memories, fears, and hopes
+            come alive again.
+          </p>
+
+          <div class="stats">
+
+            <div>
+              <strong>25+</strong>
+              <small>Stories</small>
+            </div>
+
+            <div>
+              <strong>10+</strong>
+              <small>Projects</small>
+            </div>
+
+            <div>
+              <strong>5+</strong>
+              <small>Years</small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+[8/17/2026 11:22 PM] عادل سادات: <section id="contact" class="contact glass">
+
+        <span>
+          Contact
+        </span>
+
+        <h2>
+          A Place to Start a Conversation
+        </h2>
+
+        <p>
+          For collaborations, literary projects,
+          web design, or simply a conversation,
+          feel free to get in touch.
+        </p>
+
+        <a href="mailto:example@email.com">
+          Send Email
+        </a>
+
+      </section>
+
+    </div>
+
+  </main>
+
+</Layout>
+
+
+<style>
+
+.page {
+  width: min(1500px, 94%);
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 90px 1fr;
+
+  gap: 28px;
+
+  padding: 35px 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+}
+
+
+/* Hero */
+
+.hero {
+  position: relative;
+
+  min-height: 620px;
+
+  padding: 70px;
+
+  display: grid;
+
+  grid-template-columns: 1.2fr 0.8fr;
+
+  align-items: center;
+
+  gap: 50px;
+
+  overflow: hidden;
+
+  direction: ltr;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.name-title {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: #F0C76A;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 8vw, 120px);
+  line-height: 0.95;
+  margin-bottom: 25px;
+}
+
+.hero h2 {
+  font-size: 22px;
+  margin-bottom: 28px;
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.actions a {
+  padding: 14px 25px;
+  border-radius: 15px;
+}
+
+.primary {
+  background: linear-gradient(
+    90deg,
+    #F0C76A,
+    #2E7BC6
+  );
+
+  color: #101010;
+  font-weight: bold;
+}
+
+.secondary {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.visual {
+  display: flex;
+  justify-content: center;
+}
+
+.portrait-placeholder {
+  width: 340px;
+  height: 430px;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 35px;
+}
+
+
+/* Works */
+
+.works {
+  padding: 45px;
+  direction: ltr;
+}
+
+.section-head h2 {
+  font-size: 35px;
+  margin-top: 8px;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.work-card {
+  padding: 18px;
+  border-radius: 24px;
+
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.cover {
+  height: 230px;
+  border-radius: 18px;
+  margin-bottom: 22px;
+}
+
+.cover-1 {
+  background: linear-gradient(
+    135deg,
+    #F0C76A,
+    #7A5A2E,
+    #2A2A2A
+  );
+}
+
+.cover-2 {
+  background: linear-gradient(
+    135deg,
+    #2F6F6D,
+    #2E7BC6,
+    #415A8A
+  );
+}
+
+.cover-3 {
+  background: linear-gradient(
+    135deg,
+    #6B8B5A,
+    #B7964A,
+    #2A2A2A
+  );
+}
+
+
+/* About */
+
+.about {
+  padding: 45px;
+
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 55px;
+
+  align-items: center;
+
+  direction: ltr;
+}
+
+.about-image {
+  width: 280px;
+  height: 350px;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 24px;
+}
+
+.about-content h2 {
+  font-size: 45px;
+  margin: 12px 0 25px;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+/* Contact */
+
+.contact {
+  text-align: center;
+  padding: 80px 30px;
+
+  direction: ltr;
+}
+
+.contact h2 {
+  font-size: clamp(32px, 5vw, 60px);
+  margin: 15px 0 20px;
+}
+
+.contact p {
+  margin: auto;
+  max-width: 600px;
+}
+
+.contact a {
+  display: inline-block;
+
+  margin-top: 30px;
+
+  padding: 15px 30px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(
+    90deg,
+    #F0C76A,
+    #6B8B5A,
+    #2E7BC6
+  );
+
+  color: #101010;
+  font-weight: bold;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .page {
+    display: block;
+    width: 100%;
+    padding: 14px 14px 110px;
+  }
+
+  .content {
+    gap: 18px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: auto;
+
+    padding: 22px 18px 32px;
+
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    border-radius: 26px;
+  }
+
+  .visual {
+    order: -1;
+  }
+
+  .portrait-placeholder {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+
+    aspect-ratio: 4 / 5;
+  }
+[8/17/2026 11:22 PM] عادل سادات: .hero h1 {
+    font-size: 46px;
+    line-height: 1.15;
+  }
+
+  .hero h2 {
+    font-size: 19px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .actions a {
+    text-align: center;
+  }
+
+  .works {
+    padding: 22px 16px;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    padding: 24px 18px;
+
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 280px;
+
+    height: 340px;
+  }
+
+  .about-content h2 {
+    font-size: 30px;
+  }
+
+  .stats {
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  .stats div {
+    flex: 1;
+    text-align: center;
+  }
+
+  .contact {
+    padding: 45px 20px;
+  }
+
+  .contact h2 {
+    font-size: 32px;
+  }
+
+}
+
+</style>

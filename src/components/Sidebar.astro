@@ -304,46 +304,47 @@ nav a:hover {
 
 
 <script>
+  const themeToggle =
+    document.getElementById("theme-toggle");
 
-const themeToggle =
-  document.getElementById("theme-toggle");
+  const themes = [
+    "dark",
+    "light",
+    "purple"
+  ];
+
   const savedTheme =
-  localStorage.getItem("theme");
+    localStorage.getItem("theme") || "dark";
 
-if (savedTheme === "light") {
   document.documentElement.setAttribute(
     "data-theme",
-    "light"
+    savedTheme
   );
-} else {
-  document.documentElement.setAttribute(
-    "data-theme",
-    "dark"
-  );
-}
 
-themeToggle?.addEventListener("click", () => {
+  themeToggle?.addEventListener("click", () => {
 
-  const currentTheme =
-    document.documentElement.getAttribute(
-      "data-theme"
+    const currentTheme =
+      document.documentElement.getAttribute("data-theme")
+      || "dark";
+
+    const currentIndex =
+      themes.indexOf(currentTheme);
+
+    const nextIndex =
+      (currentIndex + 1) % themes.length;
+
+    const nextTheme =
+      themes[nextIndex];
+
+    document.documentElement.setAttribute(
+      "data-theme",
+      nextTheme
     );
 
-  const newTheme =
-    currentTheme === "light"
-      ? "dark"
-      : "light";
+    localStorage.setItem(
+      "theme",
+      nextTheme
+    );
 
-  document.documentElement.setAttribute(
-    "data-theme",
-    newTheme
-  );
-
-  localStorage.setItem(
-    "theme",
-    newTheme
-  );
-
-});
-
+  });
 </script>

@@ -1,5 +1,4 @@
 <aside class="sidebar glass">
-
   <div class="logo">
     AF
   </div>
@@ -22,20 +21,30 @@
     </a>
   </nav>
 
-  <button
-    class="theme-toggle"
-    id="theme-toggle"
-    type="button"
-    aria-label="تغییر پالت رنگ"
-    title="تغییر پالت رنگ"
-  >
-    <span class="theme-orb"></span>
-  </button>
+  <!-- =========================
+       کنترل شیشه‌ای تغییر تم
+  ========================== -->
+  <div class="theme-control" id="theme-control">
+    <div class="theme-rail"></div>
 
+    <button
+      class="theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="تغییر حالت روشن و تاریک"
+      title="تغییر تم"
+    >
+      <span class="theme-orb">
+        <span class="theme-symbol">☀️</span>
+      </span>
+    </button>
+  </div>
 </aside>
 
-
 <style>
+/* =========================
+   سایدبار
+========================= */
 
 .sidebar {
   position: sticky;
@@ -47,7 +56,6 @@
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: space-between;
 
@@ -88,7 +96,6 @@
 nav {
   display: flex;
   flex-direction: column;
-
   gap: 18px;
 }
 
@@ -129,151 +136,267 @@ nav a:hover {
 
 
 /* =========================
-   دکمه تغییر تم
+   کنترل تم
 ========================= */
 
-.theme-toggle {
+.theme-control {
   position: relative;
 
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 128px;
 
-  padding: 0;
+  flex: 0 0 auto;
 
-  display: grid;
-  place-items: center;
-
-  border:
-    1px solid rgba(255, 255, 255, 0.10);
-
-  border-radius: 16px;
-
-  background:
-    rgba(255, 255, 255, 0.045);
-
-  cursor: pointer;
-
-  overflow: hidden;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-2px);
-
-  background:
-    rgba(255, 255, 255, 0.09);
-
-  border-color:
-    rgba(255, 255, 255, 0.16);
-
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.18);
+  touch-action: none;
 }
 
 
 /* =========================
-   گوی تغییر رنگ
+   مسیر شیشه‌ای
 ========================= */
 
-.theme-orb {
-  position: relative;
+.theme-rail {
+  position: absolute;
 
-  width: 23px;
-  height: 23px;
+  left: 50%;
+  top: 0;
 
-  display: block;
+  transform: translateX(-50%);
 
-  border-radius: 50%;
+  width: 50px;
+  height: 128px;
+
+  border-radius: 28px;
 
   background:
     linear-gradient(
-      135deg,
-      #2F6BFF 0%,
-      #4C8DDB 28%,
-      #6FA8E6 47%,
-      #4CC7B7 68%,
-      #2BB5A6 100%
+      180deg,
+      rgba(255, 255, 255, 0.13),
+      rgba(255, 255, 255, 0.045)
     );
 
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.18),
-    0 4px 15px rgba(47, 107, 255, 0.30),
-    inset 3px 3px 5px rgba(255, 255, 255, 0.32),
-    inset -3px -3px 5px rgba(0, 0, 0, 0.10);
+  border:
+    1px solid rgba(255, 255, 255, 0.16);
 
-  transition:
-    transform 0.55s cubic-bezier(.2,.8,.2,1),
-    box-shadow 0.4s ease;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    inset 0 -1px 0 rgba(0,0,0,0.12),
+    0 12px 30px rgba(0,0,0,0.16);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
-.theme-orb::after {
+
+/* خط درخشان داخل مسیر */
+
+.theme-rail::after {
   content: "";
 
   position: absolute;
 
-  width: 7px;
-  height: 7px;
+  left: 50%;
+  top: 21px;
 
-  top: 4px;
-  left: 5px;
+  transform: translateX(-50%);
 
-  border-radius: 50%;
+  width: 3px;
+  height: 86px;
+
+  border-radius: 99px;
 
   background:
-    rgba(255, 255, 255, 0.58);
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.55),
+      rgba(255,255,255,0.07)
+    );
 
-  filter: blur(0.4px);
-}
-
-.theme-toggle:hover .theme-orb {
-  transform:
-    rotate(180deg)
-    scale(1.08);
-
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.22),
-    0 5px 20px rgba(76, 199, 183, 0.42),
-    inset 3px 3px 6px rgba(255, 255, 255, 0.38),
-    inset -3px -3px 6px rgba(0, 0, 0, 0.10);
+  opacity: 0.45;
 }
 
 
 /* =========================
-   حالت روشن
+   خود دکمه
+========================= */
+
+.theme-toggle {
+  position: absolute;
+
+  left: 50%;
+  top: 5px;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: grab;
+
+  z-index: 2;
+
+  transition:
+    transform 0.55s cubic-bezier(.22,.85,.25,1),
+    filter 0.35s ease;
+}
+
+.theme-toggle:active {
+  cursor: grabbing;
+}
+
+
+/* =========================
+   گوی Liquid Glass
+========================= */
+
+.theme-orb {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 22%,
+      rgba(255,255,255,0.78),
+      rgba(255,255,255,0.18) 35%,
+      rgba(255,255,255,0.07) 70%
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.42);
+    box-shadow:
+    inset 0 2px 3px rgba(255,255,255,0.75),
+    inset 0 -4px 7px rgba(0,0,0,0.08),
+    0 7px 18px rgba(0,0,0,0.18),
+    0 0 16px rgba(255,255,255,0.18);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    box-shadow 0.4s ease,
+    background 0.4s ease,
+    transform 0.4s ease;
+}
+
+
+/* انعکاس بالای گوی */
+
+.theme-orb::before {
+  content: "";
+
+  position: absolute;
+
+  width: 18px;
+  height: 8px;
+
+  top: 5px;
+  left: 8px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.55);
+
+  filter: blur(3px);
+
+  transform: rotate(-20deg);
+}
+
+
+/* =========================
+   آیکن
+========================= */
+
+.theme-symbol {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 19px;
+
+  color: #1f2937;
+
+  line-height: 1;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  transition:
+    transform 0.5s ease,
+    color 0.4s ease,
+    opacity 0.3s ease;
+}
+
+
+/* =========================
+   وقتی تم روشن است
+========================= */
+
+:global(html[data-theme="light"]) .theme-toggle {
+  transform:
+    translateX(-50%)
+    translateY(76px);
+}
+
+:global(html[data-theme="light"]) .theme-symbol {
+  color: #111827;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================
+   وقتی تم تاریک است
+========================= */
+
+:global(html[data-theme="dark"]) .theme-toggle {
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+:global(html[data-theme="dark"]) .theme-symbol {
+  color: white;
+}
+
+
+/* =========================
+   جلوه تم روشن
 ========================= */
 
 :global(html[data-theme="light"]) .theme-orb {
-  transform: rotate(180deg);
-
   background:
-    linear-gradient(
-      135deg,
-      #2BB5A6 0%,
-      #4CC7B7 28%,
-      #7FD9CC 48%,
-      #6FA8E6 70%,
-      #2F6BFF 100%
+    radial-gradient(
+      circle at 30% 22%,
+      rgba(255,255,255,0.95),
+      rgba(244,221,157,0.28) 34%,
+      rgba(111,168,230,0.10) 72%
     );
 
   box-shadow:
-    0 0 0 1px rgba(214, 243, 239, 0.25),
-    0 5px 18px rgba(43, 181, 166, 0.38),
-    inset 3px 3px 6px rgba(255, 255, 255, 0.38),
-    inset -3px -3px 6px rgba(0, 0, 0, 0.08);
+    inset 0 2px 3px rgba(255,255,255,0.9),
+    inset 0 -4px 8px rgba(0,0,0,0.06),
+    0 8px 24px rgba(240,199,106,0.25),
+    0 0 22px rgba(255,255,255,0.32);
 }
 
-:global(html[data-theme="light"]) .theme-toggle {
-  background:
-    rgba(111, 168, 230, 0.10);
 
-  border-color:
-    rgba(127, 217, 204, 0.22);
-}
 /* =========================
    موبایل
 ========================= */
@@ -301,20 +424,17 @@ nav a:hover {
     flex-direction: row;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 24px;
   }
 
 
-  /* لوگوی AF در موبایل مخفی می‌شود */
-
   .logo {
     display: none;
   }
 
-
-  /* چهار دکمه منو */
 
   .sidebar nav {
     flex: 1;
@@ -328,6 +448,7 @@ nav a:hover {
 
     min-width: 0;
   }
+
 
   .sidebar nav a {
     width: 100%;
@@ -346,8 +467,6 @@ nav a:hover {
   }
 
 
-  /* آیتم فعال */
-
   .sidebar nav a.active {
     background:
       rgba(255, 255, 255, 0.09);
@@ -357,29 +476,67 @@ nav a:hover {
   }
 
 
-  /* دکمه تغییر تم */
+  /* در موبایل مسیر افقی می‌شود */
+
+  .theme-control {
+    width: 112px;
+    height: 52px;
+
+    margin-inline-start: 6px;
+  }
+
+
+  .theme-rail {
+    width: 112px;
+    height: 50px;
+
+    top: 1px;
+
+    border-radius: 26px;
+  }
+
+
+  .theme-rail::after {
+    top: 50%;
+    left: 20px;
+
+    transform: translateY(-50%);
+
+    width: 72px;
+    height: 3px;
+  }
+
 
   .theme-toggle {
-    flex: 0 0 48px;
+    top: 5px;
+    left: 5px;
 
-    width: 48px;
-    height: 48px;
+    transform:
+      translateX(0)
+      translateY(0);
 
-    margin-inline-start: 4px;
-
-    border-radius: 15px;
+    width: 42px;
+    height: 42px;
   }
 
-  .theme-orb {
-    width: 21px;
-    height: 21px;
+
+  :global(html[data-theme="dark"]) .theme-toggle {
+    transform:
+      translateX(0)
+      translateY(0);
   }
 
+
+  :global(html[data-theme="light"]) .theme-toggle {
+    transform:
+      translateX(60px)
+      translateY(0);
+  }
 }
 
 
 /* =========================
-   گوشی‌های خیلی کوچک
+   گوشی خیلی کوچک
 ========================= */
 
 @media (max-width: 380px) {
@@ -392,9 +549,11 @@ nav a:hover {
     height: 66px;
   }
 
+
   .sidebar nav {
     gap: 1px;
   }
+
 
   .sidebar nav a {
     height: 48px;
@@ -402,27 +561,126 @@ nav a:hover {
     font-size: 18px;
   }
 
-  .theme-toggle {
-    flex-basis: 44px;
 
-    width: 44px;
-    height: 44px;
+  .theme-control {
+    width: 96px;
+    height: 48px;
+  }
+
+
+  .theme-rail {
+    width: 96px;
+    height: 46px;
+  }
+
+
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+    top: 5px;
+    left: 5px;
+  }
+
+
+  .theme-orb {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  :global(html[data-theme="light"]) .theme-toggle {
+    transform:
+      translateX(48px)
+      translateY(0);
+  }
+}
+@media (max-width: 600px) {
+
+  .sidebar {
+    position: fixed;
+    z-index: 1000;
+
+    left: 50%;
+    right: auto;
+    bottom: 12px;
+    top: auto;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 24px);
+    height: 68px;
+
+    padding: 7px 8px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-radius: 22px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .sidebar nav {
+    flex: 1;
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 3px;
+  }
+
+  .sidebar nav a {
+    width: 100%;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+    margin: 0;
+
+    font-size: 19px;
+
+    border-radius: 14px;
+  }
+
+  .theme-toggle {
+    flex: 0 0 48px;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+    margin-inline-start: 4px;
+
+    border-radius: 14px;
   }
 
   .theme-orb {
-    width: 19px;
-    height: 19px;
+    width: 20px;
+    height: 20px;
   }
-
 }
-
 </style>
 
-
 <script>
-
   const themeToggle =
     document.getElementById("theme-toggle");
+
+  const themeControl =
+    document.getElementById("theme-control");
+
+  const themeSymbol =
+    document.querySelector(".theme-symbol");
+
+
+  /* =========================
+     خواندن تم ذخیره شده
+  ========================== */
 
   const savedTheme =
     localStorage.getItem("theme");
@@ -435,6 +693,10 @@ nav a:hover {
       "light"
     );
 
+    if (themeSymbol) {
+      themeSymbol.textContent = "☀️";
+    }
+
   } else {
 
     document.documentElement.setAttribute(
@@ -442,32 +704,134 @@ nav a:hover {
       "dark"
     );
 
+    if (themeSymbol) {
+      themeSymbol.textContent = "☾";
+    }
   }
 
 
-  themeToggle?.addEventListener("click", () => {
+  /* =========================
+     تابع تغییر تم
+  ========================== */
 
-    const currentTheme =
-      document.documentElement.getAttribute(
-        "data-theme"
-      );
-
-    const newTheme =
-      currentTheme === "light"
-        ? "dark"
-        : "light";
-
+  function setTheme(theme) {
 
     document.documentElement.setAttribute(
       "data-theme",
-      newTheme
+      theme
     );
 
     localStorage.setItem(
       "theme",
-      newTheme
+      theme
     );
 
-  });
 
+    if (themeSymbol) {
+
+      themeSymbol.textContent =
+        theme === "light"
+          ? "☀️"
+          : "☾";
+    }
+  }
+
+
+  /* =========================
+     کلیک ساده
+  ========================== */
+
+  themeToggle?.addEventListener(
+    "click",
+    () => {
+
+      const currentTheme =
+        document.documentElement.getAttribute(
+          "data-theme"
+        );
+
+
+      const newTheme =
+        currentTheme === "light"
+          ? "dark"
+          : "light";
+
+
+      setTheme(newTheme);
+    }
+  );
+
+
+  /* =========================
+     کشیدن با انگشت یا موس
+  ========================== */
+
+  let dragging = false;
+
+
+  themeToggle?.addEventListener(
+    "pointerdown",
+    (event) => {
+
+      dragging = true;
+
+      themeToggle.setPointerCapture(
+        event.pointerId
+      );
+    }
+  );
+
+
+  themeToggle?.addEventListener(
+    "pointerup",
+    (event) => {
+
+      if (!dragging || !themeControl) {
+        return;
+      }
+
+
+      dragging = false;
+
+
+      const rect =
+        themeControl.getBoundingClientRect();
+
+
+      const isMobile =
+        window.innerWidth <= 800;
+
+
+      if (isMobile) {
+
+        const position =
+          event.clientX - rect.left;
+
+
+        if (position > rect.width / 2) {
+
+          setTheme("light");
+
+        } else {
+
+          setTheme("dark");
+        }
+
+      } else {
+
+        const position =
+          event.clientY - rect.top;
+
+
+        if (position > rect.height / 2) {
+
+          setTheme("light");
+
+        } else {
+
+          setTheme("dark");
+        }
+      }
+    }
+  );
 </script>
